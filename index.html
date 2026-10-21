@@ -1,3 +1,566 @@
----
-layout: front
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AlphaPost.io is a free creator-publishing platform that combines AI-assisted content production, scheduled distribution, blogging automation, research utilities, and a creator community under one account. 16 tools. No subscription or card required.">
+<title>AlphaPost.io — Free Creator-Publishing Platform</title>
+
+<!-- Bootstrap 3 (CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Font Awesome (CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Custom design system -->
+<style>
+/* ============================================================
+   AlphaPost.io replica — custom design system
+   ============================================================ */
+
+ul { font-size: 1.3em; }
+ul ul { font-size: 1em; }
+
+body { font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif'; color: #1e293b; line-height: 1.6; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif'; font-weight: 600; letter-spacing: 0.4px; }
+p { font-size: 18px; line-height: 1.7; margin-bottom: 20px; }
+.lead { font-size: 20px; line-height: 1.7; }
+.small { font-size: 0.875rem; }
+.text-muted { color: #64748b; }
+
+a { color: #2563eb; transition: color 0.2s; }
+a:hover, a:focus { color: #1d4ed8; }
+
+/* Buttons */
+.btn { border-radius: 6px; font-weight: 600; transition: all 0.2s; }
+.btn-primary { background: #2563eb; border-color: #2563eb; }
+.btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+.btn-outline { border: 2px solid #2563eb; color: #2563eb; background: transparent; }
+.btn-outline:hover { background: #2563eb; color: #fff; }
+.btn-hero { background: #2563eb; border: none; color: #fff; padding: 14px 28px; font-size: 1.1rem; border-radius: 8px; box-shadow: 0 4px 14px rgba(37,99,235,0.35); }
+.btn-hero:hover { background: #1d4ed8; color: #fff; box-shadow: 0 8px 20px rgba(37,99,235,0.45); }
+.btn-hero-outline { border: 2px solid #2563eb; color: #2563eb; background: transparent; padding: 14px 28px; font-size: 1.1rem; border-radius: 8px; margin-left: 10px; }
+.btn-hero-outline:hover { background: #2563eb; color: #fff; }
+.btn-lg { padding: 16px 32px; font-size: 1.15rem; }
+.btn-nav-cta { border: 2px solid #2563eb; color: #2563eb !important; background: transparent; border-radius: 6px; padding: 6px 16px; margin-left: 10px; }
+.btn-nav-cta:hover { background: #2563eb; color: #fff !important; }
+
+/* Spacing helpers */
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+/* Navbar */
+.alpha-nav { background: #fff; border: none; border-bottom: 1px solid #e2e8f0; transition: all 0.3s; z-index: 1050; font-family: 'Catamaran', sans-serif; }
+.alpha-nav .navbar-brand { font-family: 'Catamaran', sans-serif; font-weight: 700; font-size: 1.35rem; color: #0f172a !important; padding-top: 14px; padding-bottom: 14px; }
+.alpha-nav .navbar-brand:hover, .alpha-nav .navbar-brand:focus { color: #2563eb !important; }
+.alpha-nav .brand-dot { color: #2563eb; }
+.alpha-nav .navbar-toggle { border: none; margin-top: 18px; margin-bottom: 18px; }
+.alpha-nav .navbar-toggle .fa-bars { color: #0f172a; font-size: 1.25rem; }
+.alpha-nav .navbar-nav > li > a { color: #334155 !important; font-weight: 600; font-size: 0.95rem; padding-top: 18px; padding-bottom: 18px; }
+.alpha-nav .navbar-nav > li > a:hover { color: #2563eb !important; background: transparent; }
+.alpha-nav .navbar-collapse { border-top: none; }
+
+/* Sections */
+section { padding: 70px 0; }
+.section { position: relative; }
+.section-gray { background: #f8fafc; }
+.section-primary { position: relative; }
+
+.section-heading { margin-bottom: 40px; }
+.section-title { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 12px; color: #0f172a; }
+.section-sub { font-size: 1.1rem; color: #64748b; margin: 0; }
+
+/* Hero */
+.site-hero { background: #fff; position: relative; padding: 110px 0 110px; }
+.badge-pill { display: inline-block; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #2563eb; background: #eef2ff; padding: 6px 14px; border-radius: 100px; margin-bottom: 14px; }
+.hero-title { font-size: 3rem; font-weight: 800; letter-spacing: -1px; color: #0f172a; margin: 0 0 16px; line-height: 1.15; }
+.hero-lead { font-size: 1.25rem; color: #475569; margin: 0 0 26px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.hero-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.hero-numbers { border-top: 1px solid #e2e8f0; padding-top: 32px; }
+.hero-numbers .number { display: block; font-size: 1.75rem; font-weight: 800; color: #2563eb; line-height: 1.2; }
+.hero-numbers .label { display: block; font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+/* Purpose feature boxes */
+.feature-box { text-align: center; padding: 22px; border: 1px solid #e2e8f0; border-radius: 12px; transition: all 0.2s; height: 100%; background: #fff; }
+.feature-box:hover { border-color: #2563eb; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(15,23,42,0.06); }
+.feature-icon { font-size: 2rem; color: #2563eb; margin-bottom: 14px; }
+.feature-box h4 { font-size: 1.15rem; margin: 0 0 10px; color: #0f172a; }
+.feature-box p { font-size: 0.92rem; margin: 0; }
+
+/* Tools grid */
+.tools-grid { display: flex; flex-wrap: wrap; margin: -8px; }
+.tool-col { padding: 8px; width: 25%; }
+@media (max-width: 992px){ .tool-col { width: 50%; } }
+@media (max-width: 576px){ .tool-col { width: 100%; } }
+.tool-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px 16px; height: 100%; background: #fff; transition: all 0.2s; text-align: center; }
+.tool-card:hover { border-color: #2563eb; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(15,23,42,0.08); }
+.tool-card h4 { font-size: 1.05rem; margin: 0 0 8px; color: #0f172a; }
+.tool-card p { font-size: 0.86rem; margin: 0; color: #64748b; }
+
+/* Steps */
+.steps { display: flex; flex-wrap: wrap; margin: -8px; }
+.steps > div { padding: 8px; width: 25%; }
+@media (max-width: 992px){ .steps > div { width: 50%; } }
+@media (max-width: 576px){ .steps > div { width: 100%; } }
+.step-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 26px 20px; height: 100%; background: #fff; text-align: center; transition: all 0.2s; }
+.step-card:hover { border-color: #2563eb; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(15,23,42,0.08); }
+.step-number { width: 42px; height: 42px; border-radius: 50%; background: #2563eb; color: #fff; font-size: 1.3rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.step-card h4 { font-size: 1.15rem; margin: 0 0 10px; color: #0f172a; }
+.step-card p { font-size: 0.92rem; margin: 0; color: #64748b; }
+
+/* Platforms */
+.platforms-list { display: flex; flex-wrap: wrap; margin: -8px; }
+.platforms-list > div { padding: 8px; width: 25%; }
+@media (max-width: 992px){ .platforms-list > div { width: 50%; } }
+@media (max-width: 576px){ .platforms-list > div { width: 100%; } }
+.platform-item { display: flex; align-items: center; gap: 12px; padding: 16px; border: 1px solid #e2e8f0; border-radius: 10px; background: #fff; transition: all 0.2s; }
+.platform-item:hover { border-color: #2563eb; transform: translateY(-2px); }
+.platform-icon { font-size: 1.5rem; color: #2563eb; width: 32px; text-align: center; }
+.platform-item span { font-weight: 600; color: #0f172a; font-size: 0.95rem; }
+
+/* Community */
+.community-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 40px 32px; text-align: center; }
+.community-card .lead { margin: 0; color: #334155; }
+
+/* Trust boxes */
+.trust-box { text-align: center; padding: 26px 18px; border: 1px solid #e2e8f0; border-radius: 12px; background: #fff; transition: all 0.2s; height: 100%; }
+.trust-box:hover { border-color: #2563eb; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(15,23,42,0.06); }
+.trust-icon { font-size: 2.2rem; color: #2563eb; margin-bottom: 16px; display: block; }
+.trust-box h4 { font-size: 1.1rem; margin: 0 0 10px; color: #0f172a; }
+.trust-box p { font-size: 0.88rem; margin: 0; color: #64748b; }
+
+/* Footer */
+.site-footer { border-top: 1px solid #e2e8f0; padding: 34px 0; background: #fff; }
+.footer-brand { font-family: 'Catamaran', sans-serif; font-weight: 700; font-size: 1.4rem; color: #0f172a; }
+.footer-brand .brand-dot { color: #2563eb; }
+.site-footer p { margin: 4px 0 0; font-size: 0.9rem; color: #64748b; }
+.list-social { margin: 0; padding: 0; list-style: none; }
+.list-social li { display: inline-block; margin-left: 10px; }
+.list-social a { width: 36px; height: 36px; border-radius: 6px; border: 1px solid #e2e8f0; color: #64748b; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; transition: all 0.2s; }
+.list-social a:hover { border-color: #2563eb; color: #2563eb; background: #f8fafc; }
+
+/* Go to top */
+#go-top { position: fixed; right: 24px; bottom: 24px; width: 44px; height: 44px; border-radius: 50%; background: #2563eb; box-shadow: 0 4px 14px rgba(37,99,235,0.35); transition: all 0.2s; }
+#go-top:hover { background: #1d4ed8; transform: translateY(-2px); }
+#go-top .gotop { width: 22px; height: 22px; margin-top: 10px; }
+
+/* Navbar fixed body padding */
+body { padding-top: 70px; }
+
+/* Ensure images responsive */
+img { max-width: 100%; height: auto; }
+
+</style>
+</head>
+<body id="page-top" data-spy="scroll" data-target="#mainNav" data-offset="70">
+
+
+  <nav class="navbar navbar-default navbar-fixed-top alpha-nav" id="mainNav">
+  <div class="container">
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="/">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">AlphaPost<span class="brand-dot">.io</span></span>
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="page-scroll" href="#tools">Tools</a></li>
+        <li><a class="page-scroll" href="#how-it-works">How it works</a></li>
+        <li><a class="page-scroll" href="#platforms">Platforms</a></li>
+        <li><a class="page-scroll" href="#community">Community</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a class="page-scroll btn-nav-cta" href="#signup">Start free</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero -->
+  <header class="site-hero" id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <div class="hero-inner">
+            <span class="badge-pill">Free &bull; 16 tools &bull; No card required</span>
+            <h1 class="hero-title">AlphaPost.io</h1>
+            <p class="hero-lead">The new era of creator publishing. AI-assisted content production, scheduled distribution,
+            blogging automation, research utilities, and a creator community&mdash;all under one account. Publish across
+            social platforms and Blogger with zero subscription and no payment card.</p>
+            <div class="hero-actions mt-4">
+              <a class="btn btn-hero" href="#signup">Get started&mdash;it's free</a>
+              <a class="btn btn-hero-outline" href="#tools">Explore tools</a>
+            </div>
+            <div class="hero-numbers mt-5">
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">8+</span>
+                  <span class="label">destinations</span>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">16</span>
+                  <span class="label">tools</span>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">$0</span>
+                  <span class="label">subscription</span>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">AES-256</span>
+                  <span class="label">encrypted keys</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Purpose & positioning -->
+  <section class="section section-white" id="purpose">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Purpose and positioning</h2>
+            <p class="section-sub">Reduce the manual work of creating content&mdash;and posting it again and again.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <p class="lead">AlphaPost.io is a free creator-publishing platform built for people who publish across social
+          platforms and Blogger. The site presents <strong>16 tools</strong> with no subscription or card requirement. Its
+          core promise is to move you from a topic idea to reviewed, scheduled, and published content under a single
+          account.</p>
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="fa fa-rocket feature-icon"></i>
+                <h4>Create</h4>
+                <p class="text-muted small">AI video maker, shorts maker, carousel maker, blogger automation, and more&mdash;from a typed idea to a finished asset.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="fa fa-calendar feature-icon"></i>
+                <h4>Schedule</h4>
+                <p class="text-muted small">Set a timezone-aware publication date and time. AlphaPost writes, makes, and posts while you're away.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="fa fa-share-alt feature-icon"></i>
+                <h4>Distribute</h4>
+                <p class="text-muted small">Publish to Facebook Pages, Instagram, X, Pinterest, Telegram, TikTok, YouTube, Dailymotion, and Blogger.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section section-gray" id="tools">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">16 tools, one account</h2>
+            <p class="section-sub">Everything a creator needs to produce and publish content, free.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row tools-grid">
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>AI Video Maker</h4>
+            <p class="small text-muted">A finished AI-generated reel based on a typed idea.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Shorts Maker</h4>
+            <p class="small text-muted">Short-form clips derived from a longer video.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Video Translator</h4>
+            <p class="small text-muted">A version of a video in another language.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Carousel Maker</h4>
+            <p class="small text-muted">Swipe-style visual posts for Instagram and Facebook.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Blogger Automation</h4>
+            <p class="small text-muted">Full blog articles published to your Blogger site on a schedule.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Keyword Research</h4>
+            <p class="small text-muted">Search-topic and difficulty research to inform content choices.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>AEO Checker</h4>
+            <p class="small text-muted">Checks whether AI systems may quote your site.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Website to Social</h4>
+            <p class="small text-muted">Share each new website article automatically to social channels.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>X / Twitter Auto Post</h4>
+            <p class="small text-muted">Scheduled posts via your own browser-session auth_token.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Facebook Auto Post</h4>
+            <p class="small text-muted">Publish to your connected Facebook Pages.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Instagram Auto Post</h4>
+            <p class="small text-muted">Posts, carousels, and reels to Instagram.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>YouTube &amp; Dailymotion</h4>
+            <p class="small text-muted">Automated uploads of videos and shorts.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Pinterest</h4>
+            <p class="small text-muted">Pin swipe-style carousels and images to your boards.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Telegram</h4>
+            <p class="small text-muted">Publish to your connected Telegram channel.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>TikTok</h4>
+            <p class="small text-muted">TikTok video delivery to your connected account.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works / Account setup -->
+  <section class="section section-white" id="how-it-works">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">How it works</h2>
+            <p class="section-sub">From sign-up to scheduled publishing in minutes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row steps">
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Register</h4>
+            <p class="small text-muted">Create a free AlphaPost account. The same account gives access to all tools and the community, with no trial period or payment-card requirement.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Connect channels</h4>
+            <p class="small text-muted">Connect the accounts you intend to use&mdash;Facebook Page, Instagram, Blogger, Pinterest, Telegram, TikTok, YouTube, or Dailymotion.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Configure AI</h4>
+            <p class="small text-muted">Add your own Google Gemini API key from Google AI Studio. AI generation is tied to your own key, not an AlphaPost-provided pool of credits.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h4>Create &amp; schedule</h4>
+            <p class="small text-muted">Pick a tool, set a topic and time, and let AlphaPost write, make, and post while you're away.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h4>Publish &amp; track</h4>
+            <p class="small text-muted">Content is published to your chosen destinations. Check results in each platform's native analytics.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">6</div>
+            <h4>Community</h4>
+            <p class="small text-muted">Ask questions, share workflows, and learn from other creators in the AlphaPost community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms -->
+  <section class="section section-gray" id="platforms">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Publish everywhere</h2>
+            <p class="section-sub">Eight social destinations plus Blogger, all from one account.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row platforms-list">
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-facebook platform-icon"></i><span>Facebook Pages</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-instagram platform-icon"></i><span>Instagram</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-twitter platform-icon"></i><span>X (Twitter)</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-pinterest-p platform-icon"></i><span>Pinterest</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-globe platform-icon"></i><span>Telegram</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-youtube platform-icon"></i><span>YouTube</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-globe platform-icon"></i><span>TikTok</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-globe platform-icon"></i><span>Blogger</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="section section-white" id="community">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Creator community</h2>
+            <p class="section-sub">Ask questions, share lessons, and learn from other creators.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="community-card">
+            <p class="lead">AlphaPost includes a community for asking questions, sharing lessons, and learning from other creators. Solo creators, small publishers, bloggers, affiliate marketers, and social-media operators get one free workspace for recurring content creation and scheduled publishing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section class="section section-gray" id="security">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Security you can trust</h2>
+            <p class="section-sub">Your keys and tokens stay yours&mdash;and encrypted.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="trust-box">
+            <i class="fa fa-lock trust-icon"></i>
+            <h4>AES-256 encryption</h4>
+            <p class="small text-muted">Saved keys and posting tokens are encrypted with AES-256 and used only to publish material you configure.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-box">
+            <i class="fa fa-user-secret trust-icon"></i>
+            <h4>Your own AI key</h4>
+            <p class="small text-muted">AI generation capacity is tied to your own Gemini key. AlphaPost never sells your data.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-box">
+            <i class="fa fa-video-camera trust-icon"></i>
+            <h4>Local video creation</h4>
+            <p class="small text-muted">Videos are created on your device and sent directly to the platform&mdash;not stored on AlphaPost's servers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Signup -->
+  <section class="section section-primary text-center" id="signup" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;">
+    <div class="container">
+      <h2 class="section-title" style="color:#fff;">Ready to publish smarter?</h2>
+      <p class="lead" style="color:#cbd5e1;">Join creators publishing across social platforms and Blogger&mdash;free, no card required.</p>
+      <div class="cta-actions mt-4">
+        <a class="btn btn-hero btn-lg" href="#" style="background:#2563eb;border-color:#2563eb;">Start free &rarr;</a>
+        <a class="btn btn-hero-outline btn-lg" href="#" style="border-color:#94a3b8;color:#fff;">Learn more</a>
+      </div>
+      <p class="small mt-4" style="opacity:.7;">AlphaPost.io &bull; Free creator-publishing platform &bull; 16 tools</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <span class="brand-text footer-brand">AlphaPost<span class="brand-dot">.io</span></span>
+          <p class="small text-muted">Free creator-publishing platform. AI-assisted content, scheduled distribution, blogging automation, research utilities, and community&mdash;under one account.</p>
+        </div>
+        <div class="col-md-6 text-right">
+          <ul class="list-inline list-social">
+            
+            <li class="social-">
+              <a href="" class="btn-social btn-outline"><i class="fa fa-fw fa-"></i></a>
+            </li>
+            
+          </ul>
+          <p class="small text-muted mt-2">&copy; AlphaPost. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- go to top button -->
+  <a href="#top"><div id="go-top" style="display: block;"><span class="hint--top hint--bounce" data-hint="Go to top"><img class="gotop" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAQAAAAm93DmAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwABJ0cAASdHAQQOxT4AAAH2SURBVEjH7dXLi41hHMDxz5nXMEadIZf00JRpUjPF0MG4xBiysbay0+RSs1AoWZ2FpctCspjBnvwDNkTJuEw6RZgpZkGvJuQgE+OcsTA3M+cWS+e7/j3fenu+z++lSpUq5UlUMpQiQq6/gtmoIt18R23xJPyM/12YIintlF3qPQjfyymj0rLAUmccMdcc7Za7H74F8d8JU9Doov3jUzXWa9YnW0oZldS16LFXAgM+WCyhRZtH3hdXRiV0m1y2DfQ54IY2K7FKu4y3xZRRUd0evdaCmw555p27VmtGsMNLrworo4K6Gvtc0oS867oNgY9uW6FVwhKd3ngRxuLywhRzdDlvOUb1Om6YfrHAF7c0WCeS1OmTTMjHpYUp6hxz2iKMOCst2z/+abFYGHFHwka16u2U83hm7NEMXVLaSfXISjtr5M/nFgs/3PPVZnXm2T479mhKNi1ihp3QY3T2642FnIdiWy0oFHs07V6nIh7S7bp84WUQC2MyBmy2cHbs0aRuKuJnDrtJ8d0SC7yUsdGymbFHBSI+6H4p3aRySN/s2KMU7HbFGkxErPzmiwXiabF3eO51UAOaNCLvmi6DlegYnxrU5Zo8GjVBFAs8VWuDqxMRV8pk7Au1OueCXP/vX0CKpA53ZSuXTZGiwQ53fP6b01Wq/J/8AoWqpexekIXXAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTEyLTI0VDE1OjAxOjU5KzAxOjAwE3DxMQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0xMi0yNFQxNTowMTo1OSswMTowMGItSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC" width="40" height="40" alt="go to top"></span></div></a>
+
+  
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+(function(){ var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true;
+ ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+ var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,s);})();
+</script>
+</body>
+</html>
