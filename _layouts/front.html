@@ -3,17 +3,383 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="en">
-
 {% include head.html %}
 
-<body id="page-top">
-  {% include nav.html %}
-  {% include header.html %}
-  {% include customers.html %}
-  {% include call-to-action.html %}
-  {% include services.html %}
-  {% include contact.html %}
-  {% include scripts.html %}
-</body>
+<body id="page-top" data-spy="scroll" data-target="#mainNav" data-offset="70">
 
+  {% include nav.html %}
+
+  <!-- Hero -->
+  <header class="site-hero" id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <div class="hero-inner">
+            <span class="badge-pill">Free &bull; 16 tools &bull; No card required</span>
+            <h1 class="hero-title">AlphaPost.io</h1>
+            <p class="hero-lead">The new era of creator publishing. AI-assisted content production, scheduled distribution,
+            blogging automation, research utilities, and a creator community&mdash;all under one account. Publish across
+            social platforms and Blogger with zero subscription and no payment card.</p>
+            <div class="hero-actions mt-4">
+              <a class="btn btn-hero" href="#signup">Get started&mdash;it's free</a>
+              <a class="btn btn-hero-outline" href="#tools">Explore tools</a>
+            </div>
+            <div class="hero-numbers mt-5">
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">8+</span>
+                  <span class="label">destinations</span>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">16</span>
+                  <span class="label">tools</span>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">$0</span>
+                  <span class="label">subscription</span>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <span class="number">AES-256</span>
+                  <span class="label">encrypted keys</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Purpose & positioning -->
+  <section class="section section-white" id="purpose">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Purpose and positioning</h2>
+            <p class="section-sub">Reduce the manual work of creating content&mdash;and posting it again and again.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <p class="lead">AlphaPost.io is a free creator-publishing platform built for people who publish across social
+          platforms and Blogger. The site presents <strong>16 tools</strong> with no subscription or card requirement. Its
+          core promise is to move you from a topic idea to reviewed, scheduled, and published content under a single
+          account.</p>
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="fa fa-rocket feature-icon"></i>
+                <h4>Create</h4>
+                <p class="text-muted small">AI video maker, shorts maker, carousel maker, blogger automation, and more&mdash;from a typed idea to a finished asset.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="fa fa-calendar feature-icon"></i>
+                <h4>Schedule</h4>
+                <p class="text-muted small">Set a timezone-aware publication date and time. AlphaPost writes, makes, and posts while you're away.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="fa fa-share-alt feature-icon"></i>
+                <h4>Distribute</h4>
+                <p class="text-muted small">Publish to Facebook Pages, Instagram, X, Pinterest, Telegram, TikTok, YouTube, Dailymotion, and Blogger.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section section-gray" id="tools">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">16 tools, one account</h2>
+            <p class="section-sub">Everything a creator needs to produce and publish content, free.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row tools-grid">
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>AI Video Maker</h4>
+            <p class="small text-muted">A finished AI-generated reel based on a typed idea.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Shorts Maker</h4>
+            <p class="small text-muted">Short-form clips derived from a longer video.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Video Translator</h4>
+            <p class="small text-muted">A version of a video in another language.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Carousel Maker</h4>
+            <p class="small text-muted">Swipe-style visual posts for Instagram and Facebook.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Blogger Automation</h4>
+            <p class="small text-muted">Full blog articles published to your Blogger site on a schedule.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Keyword Research</h4>
+            <p class="small text-muted">Search-topic and difficulty research to inform content choices.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>AEO Checker</h4>
+            <p class="small text-muted">Checks whether AI systems may quote your site.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Website to Social</h4>
+            <p class="small text-muted">Share each new website article automatically to social channels.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>X / Twitter Auto Post</h4>
+            <p class="small text-muted">Scheduled posts via your own browser-session auth_token.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Facebook Auto Post</h4>
+            <p class="small text-muted">Publish to your connected Facebook Pages.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Instagram Auto Post</h4>
+            <p class="small text-muted">Posts, carousels, and reels to Instagram.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>YouTube &amp; Dailymotion</h4>
+            <p class="small text-muted">Automated uploads of videos and shorts.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Pinterest</h4>
+            <p class="small text-muted">Pin swipe-style carousels and images to your boards.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>Telegram</h4>
+            <p class="small text-muted">Publish to your connected Telegram channel.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 tool-col">
+          <div class="tool-card">
+            <h4>TikTok</h4>
+            <p class="small text-muted">TikTok video delivery to your connected account.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works / Account setup -->
+  <section class="section section-white" id="how-it-works">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">How it works</h2>
+            <p class="section-sub">From sign-up to scheduled publishing in minutes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row steps">
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Register</h4>
+            <p class="small text-muted">Create a free AlphaPost account. The same account gives access to all tools and the community, with no trial period or payment-card requirement.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Connect channels</h4>
+            <p class="small text-muted">Connect the accounts you intend to use&mdash;Facebook Page, Instagram, Blogger, Pinterest, Telegram, TikTok, YouTube, or Dailymotion.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Configure AI</h4>
+            <p class="small text-muted">Add your own Google Gemini API key from Google AI Studio. AI generation is tied to your own key, not an AlphaPost-provided pool of credits.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h4>Create &amp; schedule</h4>
+            <p class="small text-muted">Pick a tool, set a topic and time, and let AlphaPost write, make, and post while you're away.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h4>Publish &amp; track</h4>
+            <p class="small text-muted">Content is published to your chosen destinations. Check results in each platform's native analytics.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">6</div>
+            <h4>Community</h4>
+            <p class="small text-muted">Ask questions, share workflows, and learn from other creators in the AlphaPost community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms -->
+  <section class="section section-gray" id="platforms">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Publish everywhere</h2>
+            <p class="section-sub">Eight social destinations plus Blogger, all from one account.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row platforms-list">
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-facebook platform-icon"></i><span>Facebook Pages</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-instagram platform-icon"></i><span>Instagram</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-twitter platform-icon"></i><span>X (Twitter)</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-pinterest-p platform-icon"></i><span>Pinterest</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-globe platform-icon"></i><span>Telegram</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-youtube platform-icon"></i><span>YouTube</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-globe platform-icon"></i><span>TikTok</span></div></div>
+        <div class="col-md-4 col-sm-6"><div class="platform-item"><i class="fa fa-globe platform-icon"></i><span>Blogger</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="section section-white" id="community">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Creator community</h2>
+            <p class="section-sub">Ask questions, share lessons, and learn from other creators.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="community-card">
+            <p class="lead">AlphaPost includes a community for asking questions, sharing lessons, and learning from other creators. Solo creators, small publishers, bloggers, affiliate marketers, and social-media operators get one free workspace for recurring content creation and scheduled publishing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section class="section section-gray" id="security">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="section-heading">
+            <h2 class="section-title">Security you can trust</h2>
+            <p class="section-sub">Your keys and tokens stay yours&mdash;and encrypted.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="trust-box">
+            <i class="fa fa-lock trust-icon"></i>
+            <h4>AES-256 encryption</h4>
+            <p class="small text-muted">Saved keys and posting tokens are encrypted with AES-256 and used only to publish material you configure.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-box">
+            <i class="fa fa-user-secret trust-icon"></i>
+            <h4>Your own AI key</h4>
+            <p class="small text-muted">AI generation capacity is tied to your own Gemini key. AlphaPost never sells your data.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-box">
+            <i class="fa fa-video-camera trust-icon"></i>
+            <h4>Local video creation</h4>
+            <p class="small text-muted">Videos are created on your device and sent directly to the platform&mdash;not stored on AlphaPost's servers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Signup -->
+  <section class="section section-primary text-center" id="signup" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;">
+    <div class="container">
+      <h2 class="section-title" style="color:#fff;">Ready to publish smarter?</h2>
+      <p class="lead" style="color:#cbd5e1;">Join creators publishing across social platforms and Blogger&mdash;free, no card required.</p>
+      <div class="cta-actions mt-4">
+        <a class="btn btn-hero btn-lg" href="#" style="background:#2563eb;border-color:#2563eb;">Start free &rarr;</a>
+        <a class="btn btn-hero-outline btn-lg" href="#" style="border-color:#94a3b8;color:#fff;">Learn more</a>
+      </div>
+      <p class="small mt-4" style="opacity:.7;">AlphaPost.io &bull; Free creator-publishing platform &bull; 16 tools</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <span class="brand-text footer-brand">AlphaPost<span class="brand-dot">.io</span></span>
+          <p class="small text-muted">Free creator-publishing platform. AI-assisted content, scheduled distribution, blogging automation, research utilities, and community&mdash;under one account.</p>
+        </div>
+        <div class="col-md-6 text-right">
+          <ul class="list-inline list-social">
+            {% for network in site.social %}
+            <li class="social-{{ network.title }}">
+              <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
+            </li>
+            {% endfor %}
+          </ul>
+          <p class="small text-muted mt-2">&copy; AlphaPost. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- go to top button -->
+  <a href="#top"><div id="go-top" style="display: block;"><span class="hint--top hint--bounce" data-hint="Go to top"><img class="gotop" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAQAAAAm93DmAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwABJ0cAASdHAQQOxT4AAAH2SURBVEjH7dXLi41hHMDxz5nXMEadIZf00JRpUjPF0MG4xBiysbay0+RSs1AoWZ2FpctCspjBnvwDNkTJuEw6RZgpZkGvJuQgE+OcsTA3M+cWS+e7/j3fenu+z++lSpUq5UlUMpQiQq6/gtmoIt18R23xJPyM/12YIintlF3qPQjfyymj0rLAUmccMdcc7Za7H74F8d8JU9Doov3jUzXWa9YnW0oZldS16LFXAgM+WCyhRZtH3hdXRiV0m1y2DfQ54IY2K7FKu4y3xZRRUd0evdaCmw555p27VmtGsMNLrworo4K6Gvtc0oS867oNgY9uW6FVwhKd3ngRxuLywhRzdDlvOUb1Om6YfrHAF7c0WCeS1OmTTMjHpYUp6hxz2iKMOCst2z/+abFYGHFHwka16u2U83hm7NEMXVLaSfXISjtr5M/nFgs/3PPVZnXm2T479mhKNi1ihp3QY3T2642FnIdiWy0oFHs07V6nIh7S7bp84WUQC2MyBmy2cHbs0aRuKuJnDrtJ8d0SC7yUsdGymbFHBSI+6H4p3aRySN/s2KMU7HbFGkxErPzmiwXiabF3eO51UAOaNCLvmi6DlegYnxrU5Zo8GjVBFAs8VWuDqxMRV8pk7Au1OueCXP/vX0CKpA53ZSuXTZGiwQ53fP6b01Wq/J/8AoWqpexekIXXAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTEyLTI0VDE1OjAxOjU5KzAxOjAwE3DxMQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0xMi0yNFQxNTowMTo1OSswMTowMGItSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC" width="40" height="40" alt="go to top"></span></div></a>
+
+  {% include scripts.html %}
+
+</body>
 </html>
